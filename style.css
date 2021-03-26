@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Baumans&family=Megrim&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Baumans|Megrim&display=swap");
 body {
   margin: 0;
   padding: 0;
@@ -6,13 +6,13 @@ body {
   overflow: hidden;
   position: relative;
   font-family: "Baumans", cursive;
-  color: #f3f0f0;
-  background: url(./media/background.jpg) no-repeat 50% 50%;
+  color: #F3F0F0;
+  background: url("https://i.ibb.co/yhG3ZGN/background.jpg") no-repeat 50% 50%;
   background-size: cover;
 }
 body:before {
   content: "";
-  background: #0000;
+  background: #000000;
   background: linear-gradient(168deg, #000000 0%, transparent 100%);
   height: 100%;
   width: 100%;
@@ -26,10 +26,11 @@ li {
 }
 
 a {
+  color: white;
   text-decoration: none;
 }
 a:visited {
-  color: #f3f0f0;
+  color: #F3F0F0;
 }
 
 .title {
@@ -45,25 +46,26 @@ a:visited {
   margin: 0;
   padding-left: 10px;
   color: #fa9e1e;
-  text-shadow: 2px 2px 0px #84c1ff, 4px 4px 0 #ff1808, 4px 4px 6px #fa9e1e;
+  text-shadow: 2px 2px 0px #84c1ff, 4px 4px 0px #ff1808, 4px 4px 6px #fa9e1e;
 }
 
 .nav {
   position: absolute;
   top: 4px;
   right: 10px;
+  z-index: 100;
 }
 .nav li {
   display: inline;
   padding: 0 15px;
-  border-left: 3px solid #f3f0f0;
+  border-left: 3px solid #F3F0F0;
 }
 .nav li:hover {
-  border: 2px solid #f3f0f0;
-  transition: 1s ease-in-out;
+  border: 2px solid #F3F0F0;
+  transition: 0.05s ease-in-out;
 }
 .nav li:active {
-  border: 5px solid #f3f0f0;
+  border: 5px solid #F3F0F0;
 }
 @media (max-width: 799px) {
   .nav li {
@@ -74,7 +76,7 @@ a:visited {
 .line {
   width: 85%;
   height: 100px;
-  border: solid 1px #f3f0f0;
+  border: solid 1px #F3F0F0;
   border-radius: 45%/60px 100px 0 0;
   border-color: #fa9e1e transparent transparent transparent;
   position: absolute;
@@ -84,10 +86,10 @@ a:visited {
 
 .carousel {
   width: 20%;
-  border-radius: 0 0 15px 15px;
-  margin: -20px auto -20px auto;
+  border-radius: 0px 0px 15px 15px;
+  margin: -20px auto 20px auto;
   overflow: hidden;
-  box-shadow: 8px 8px 4px -3px rgba(0, 0, 0, 0.495);
+  box-shadow: 8px 8px 4px -3px rgba(0, 0, 0, 0.7);
 }
 @media (max-width: 840px) {
   .carousel {
@@ -100,7 +102,7 @@ a:visited {
   margin: 0;
   padding: 0;
   font-size: 0;
-  animation: 10s sliders infinite;
+  animation: 25s sliders infinite;
 }
 .carousel__figure--pic {
   width: 33.33%;
@@ -136,6 +138,42 @@ a:visited {
   100% {
     right: 0%;
   }
+}
+.offers {
+  padding-top: 50px;
+}
+
+.perspective {
+  width: 100%;
+  perspective: 800px;
+  display: flex;
+  justify-content: space-between;
+}
+.perspective__3d {
+  width: 140px;
+  height: 200px;
+  margin: auto;
+  box-shadow: 0 70px 63px -60px #494848;
+  transform-style: preserve-3d;
+  transition: transform 0.05s linear;
+}
+.perspective__3d--card {
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  border-radius: 15px;
+}
+.perspective__3d--card:after {
+  background: inherit;
+  content: "";
+  display: block;
+  position: absolute;
+  left: -60px;
+  top: 40px;
+  width: 100%;
+  height: 85%;
+  z-index: -1;
+  filter: blur(50px);
 }
 
 /*# sourceMappingURL=style.css.map */

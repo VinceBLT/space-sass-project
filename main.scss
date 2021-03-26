@@ -1,6 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Baumans&family=Megrim&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Baumans|Megrim&display=swap');
 
-$white: #f3f0f0;
+$white: #F3F0F0;
 $blue: #84c1ff;
 $red: #ff1808;
 $orange: #fa9e1e;
@@ -9,17 +9,17 @@ body {
   margin: 0;
   padding: 0;
   height: 100vh;
-  overflow: hidden;
+  overflow:hidden;
   position: relative;
-  font-family: "Baumans", cursive;
+  font-family: 'Baumans', cursive;
   color: $white;
-  background: url(./media/background.jpg) no-repeat 50% 50%;
+  background: url("https://i.ibb.co/yhG3ZGN/background.jpg") no-repeat 50% 50%;
   background-size: cover;
 
   &:before {
-    content: "";
-    background: #0000;
-    background: linear-gradient(168deg, #000000 0%, transparent 100%);
+    content:'';
+    background: #000000;
+    background: linear-gradient(168deg,#000000 0%, transparent 100%);
     height: 100%;
     width: 100%;
     background-size: cover;
@@ -27,40 +27,38 @@ body {
     z-index: 0;
   }
 }
-
 li {
   list-style: none;
 }
-
 a {
+  color: white;
   text-decoration: none;
-  &:visited {
-    color: $white;
-  }
+    &:visited {
+      color: $white;
+    }
 }
-
-// ********** HEADER ************
+// ******************** HEADER ***********************
 .title {
   padding: 5px 0 0 10px;
   z-index: 10;
   position: relative;
 
   h1 {
-    font-family: "Megrim", cursive;
-    font-size: 45px;
-    font-weight: 100;
-    text-transform: uppercase;
-    margin: 0;
-    padding-left: 10px;
-    color: $orange;
-    text-shadow: 2px 2px 0px $blue, 4px 4px 0 $red, 4px 4px 6px $orange;
+  font-family: 'Megrim', cursive;
+  font-size: 45px;
+  font-weight: 100;
+  text-transform: uppercase;
+  margin: 0;
+  padding-left: 10px;
+  color: $orange;
+  text-shadow: 2px 2px 0px $blue, 4px 4px 0px $red, 4px 4px 6px $orange;
   }
 }
-
 .nav {
   position: absolute;
   top: 4px;
   right: 10px;
+  z-index: 100;
 
   li {
     display: inline;
@@ -69,7 +67,7 @@ a {
 
     &:hover {
       border: 2px solid $white;
-      transition: 1s ease-in-out;
+      transition: 0.05s ease-in-out;
     }
     &:active {
       border: 5px solid $white;
@@ -79,7 +77,6 @@ a {
     }
   }
 }
-
 .line {
   width: 85%;
   height: 100px;
@@ -90,14 +87,13 @@ a {
   top: 80px;
   left: 13%;
 }
-
-// ************ CAROUSEL *************
+// ****************** CAROUSEL **********************
 .carousel {
   width: 20%;
-  border-radius: 0 0 15px 15px;
-  margin: -20px auto -20px auto;
+  border-radius: 0px 0px 15px 15px;
+  margin: -20px auto 20px auto;
   overflow: hidden;
-  box-shadow: 8px 8px 4px -3px rgba(0, 0, 0, 0.495);
+  box-shadow: 8px 8px 4px -3px rgba(0,0,0,0.7);
 
   @media (max-width: 840px) {
     display: none;
@@ -108,7 +104,7 @@ a {
     margin: 0;
     padding: 0;
     font-size: 0;
-    animation: 10s sliders infinite;
+    animation: 25s sliders infinite;
 
     &--pic {
       width: 33.33%;
@@ -118,31 +114,53 @@ a {
   }
 }
 @keyframes sliders {
-  0% {
-    left: 0%;
+  0% {left: 0%;}
+  20% {left: 0%;}
+  25% {left: -100%;}
+  45% {left: -100%;}
+  50% {left: -200%;}
+  70% {right: 200%;}
+  75% {right: 100%;}
+  95% {right: 100%;}
+  100% {right: 0%;}
+}
+// ********************** PRICING *********************
+.offers {
+  padding-top: 50px;
+}
+.perspective {
+  width: 100%;
+  perspective: 800px;
+  display: flex;
+  justify-content: space-between;
+
+  &__3d {
+    width: 140px;
+    height: 200px;
+    margin: auto;
+    box-shadow: 0 70px 63px -60px #494848;
+    transform-style: preserve-3d;
+    transition: transform 0.05s linear;
+
+    &--card {
+      background-size: cover;
+      height: 100%;
+      width: 100%;
+      border-radius: 15px;
+    
+      &:after {
+        background: inherit;
+        content: '';
+        display: block;
+        position: absolute;
+        left: -60px;
+        top: 40px;
+        width: 100%;
+        height: 85%;
+        z-index: -1;
+        filter: blur(50px);
+      }
+    }
   }
-  20% {
-    left: 0%;
-  }
-  25% {
-    left: -100%;
-  }
-  45% {
-    left: -100%;
-  }
-  50% {
-    left: -200%;
-  }
-  70% {
-    right: 200%;
-  }
-  75% {
-    right: 100%;
-  }
-  95% {
-    right: 100%;
-  }
-  100% {
-    right: 0%;
-  }
+  
 }
