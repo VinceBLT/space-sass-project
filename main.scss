@@ -1,4 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Baumans&family=Megrim&display=swap");
+
+$white: #f3f0f0;
+$blue: #84c1ff;
+$red: #ff1808;
+$orange: #fa9e1e;
+
 body {
-    background: black;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  font-family: "Baumans", cursive;
+  color: $white;
+  background: url(./media/background.jpg) no-repeat 50% 50%;
+  background-size: cover;
 }
 
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  &:visited {
+    color: $white;
+  }
+}
+
+// ********** HEADER ************
+.title {
+  padding: 5px 0 0 10px;
+
+  h1 {
+    font-family: "Megrim", cursive;
+    font-size: 45px;
+    font-weight: 100;
+  }
+}
