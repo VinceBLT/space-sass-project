@@ -29,6 +29,45 @@ a:visited {
   font-family: "Megrim", cursive;
   font-size: 45px;
   font-weight: 100;
+  text-transform: uppercase;
+  margin: 0;
+  padding-left: 10px;
+  color: #fa9e1e;
+  text-shadow: 2px 2px 0px #84c1ff, 4px 4px 0 #ff1808, 4px 4px 6px #fa9e1e;
+}
+
+.nav {
+  position: absolute;
+  top: 4px;
+  right: 10px;
+}
+.nav li {
+  display: inline;
+  padding: 0 15px;
+  border-left: 3px solid #f3f0f0;
+}
+.nav li:hover {
+  border: 2px solid #f3f0f0;
+  transition: 1s ease-in-out;
+}
+.nav li:active {
+  border: 5px solid #f3f0f0;
+}
+@media (max-width: 799px) {
+  .nav li {
+    display: none;
+  }
+}
+
+.line {
+  width: 85%;
+  height: 100px;
+  border: solid 1px #f3f0f0;
+  border-radius: 45%/60px 100px 0 0;
+  border-color: #fa9e1e transparent transparent transparent;
+  position: absolute;
+  top: 80px;
+  left: 13%;
 }
 
 /*# sourceMappingURL=style.css.map */
